@@ -2,7 +2,6 @@ package com.example.swaragroup.util
 
 import androidx.annotation.DrawableRes
 import com.example.swaragroup.R
-import com.example.swaragroup.navigation.Screen
 
 sealed class OnBoardingPage (
     @DrawableRes

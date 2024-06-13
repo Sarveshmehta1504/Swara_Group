@@ -23,3 +23,6 @@ val GrayColor = Color(0xFF7B6F72)
 val WhiteColor = Color(0xFFFFFFFF)
 val InputTextField = Color(0xFFD5D5D5)
 
+val Black = Color(0xFF0D0D0E)
+
+

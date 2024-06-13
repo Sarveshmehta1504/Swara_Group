@@ -10,6 +10,7 @@ import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.defaultMinSize
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.heightIn
@@ -27,6 +28,7 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonColors
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Checkbox
+import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
@@ -63,6 +65,7 @@ import androidx.compose.ui.focus.FocusState
 import androidx.compose.ui.focus.focusOrder
 import androidx.compose.ui.focus.onFocusChanged
 import androidx.compose.ui.graphics.Brush
+import androidx.compose.ui.graphics.StrokeCap
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.res.fontResource
@@ -73,6 +76,7 @@ import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.swaragroup.R
+import com.example.swaragroup.ui.theme.Black
 import com.example.swaragroup.ui.theme.GrayColor
 import com.example.swaragroup.ui.theme.Primary
 import com.example.swaragroup.ui.theme.TextColor
@@ -372,6 +376,26 @@ fun TransparentHintTextField(
             Text(text = hint, style = textStyle, color = Color.DarkGray)
         }
     }
+}
+
+@Composable
+fun Loading(){
+    Box(
+        modifier = Modifier.fillMaxSize(),
+        contentAlignment = androidx.compose.ui.Alignment.Center
+    ){
+        CircularProgressIndicator(
+            color = Black,
+            strokeWidth = 6.dp,
+            strokeCap = StrokeCap.Round
+        )
+    }
+}
+
+@Preview(showSystemUi = true)
+@Composable
+fun LoadingPreview(){
+    Loading()
 }
 
 

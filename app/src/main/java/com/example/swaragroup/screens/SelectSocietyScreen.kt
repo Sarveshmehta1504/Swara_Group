@@ -101,7 +101,7 @@ fun SelectSocietyScreen(
             IconButton(
                 modifier = Modifier.padding(top = 15.dp, start = 7.dp),
                 onClick = {
-                    navController.popBackStack()
+                    navController.navigateUp()
                 }) {
                 Icon(
                     Icons.AutoMirrored.Filled.ArrowBack,

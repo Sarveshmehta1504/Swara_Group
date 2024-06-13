@@ -46,6 +46,7 @@ import androidx.navigation.compose.rememberNavController
 import com.example.swaragroup.R
 import com.example.swaragroup.components.NormalHeadingText
 import com.example.swaragroup.components.OTPTextFields
+import com.example.swaragroup.navigation.Screen
 import com.github.ehsannarmani.otp.ui.Otp
 
 @Composable
@@ -54,10 +55,11 @@ fun OTPScreen(
 ) {
     var otpVal: String? = null
     Scaffold(
-        modifier = Modifier.fillMaxSize()
+        modifier = Modifier.fillMaxSize().background(Color.White)
     ) { paddingValue ->
         Surface(
             modifier = Modifier
+                .background(Color.White)
                 .fillMaxSize()
                 .padding(paddingValue)
         ) {
@@ -71,7 +73,7 @@ fun OTPScreen(
                 IconButton(
                     modifier = Modifier,
                     onClick = {
-                        navController.popBackStack()
+                        navController.navigateUp()
                     }) {
                     Icon(
                         Icons.AutoMirrored.Filled.ArrowBack,
@@ -130,7 +132,9 @@ fun OTPScreen(
                 )
                 Spacer(modifier = Modifier.height(30.dp))
                 androidx.compose.material3.Button(
-                    onClick = { },
+                    onClick = {
+                              navController.navigate(Screen.SelectSociety.route)
+                    },
                     modifier = Modifier
                         .fillMaxWidth()
                         .heightIn(47.dp)
@@ -166,7 +170,7 @@ fun OTPScreen(
     }
 }
 
-@Preview
+@Preview(showSystemUi = true)
 @Composable
 fun OTPScreenPreview() {
     OTPScreen(navController = rememberNavController())
