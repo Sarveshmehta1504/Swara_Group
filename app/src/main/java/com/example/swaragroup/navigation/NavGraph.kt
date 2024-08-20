@@ -13,9 +13,10 @@ import com.example.swaragroup.screens.SignUpScreen
 
 @Composable
 fun SetupNavGraph(
-    navController: NavHostController
+    navController: NavHostController,
+    startDestination: String
 ){
-    NavHost(navController = navController, startDestination = Screen.OnBoarding.route){
+    NavHost(navController = navController, startDestination = startDestination){
         composable(route= Screen.OnBoarding.route){
             OnBoardingScreen(navController = navController)
         }

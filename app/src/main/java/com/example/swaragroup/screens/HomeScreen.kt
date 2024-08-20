@@ -75,7 +75,7 @@ fun HomeScreen(
             hasNews = false
         ),
         BottomNavigationItem(
-            title = "Notice",
+            title = "Profile",
             selectedIcon = painterResource(id = R.drawable.account),
             unselectedIcon = painterResource(id = R.drawable.account),
             hasNews = false
